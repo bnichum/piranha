@@ -1,4 +1,3 @@
-FROM rocker/tidyverse
-RUN install2.r -e patchwork phytools
-RUN Rscript -e "install.packages('BiocManager', version='3.12')"
+FROM rocker/tidyverse:4.1.0
+RUN install2.r -e BiocManager patchwork phytools
 RUN Rscript -e "BiocManager::install('ggtree')"
